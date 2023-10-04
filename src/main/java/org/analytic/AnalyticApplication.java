@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 public class AnalyticApplication {
 
   public static void main(String[] args) {
-    System.out.println("1111");
+    System.out.println("test teamcity");
     SpringApplication.run(AnalyticApplication.class, args);
   }
 
