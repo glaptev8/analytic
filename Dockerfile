@@ -5,6 +5,8 @@ COPY build/libs/analytic-*-SNAPSHOT.jar /analytic/build/
 
 WORKDIR /analytic/build
 
+RUN touch /Users/laptev_8/Downloads/elasticsearch-8.10.2/logs/analytic.log
+
 EXPOSE 8080
 
 ENTRYPOINT java -jar analytic-*-SNAPSHOT.jar

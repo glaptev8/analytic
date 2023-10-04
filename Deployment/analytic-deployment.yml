@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytic-deployment
+  labels:
+    app: analytic
+spec:
+  replicas: 2
+  minReadySeconds: 15
+  selector:
+    matchLabels:
+      app: analytic
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: analytic
+    spec:
+      containers:
+        - image: glaptev8/analytic:0.0
+          imagePullPolicy: Always
+          name: analytic-pod
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: /analytic/logs/analytic.log
+              name: logs
+      volumes:
+        - name: logs
+          hostPath:
+            path: /Users/laptev_8/Downloads/elasticsearch-8.10.2/logs/analytic.log
+            type: FileOrCreate
