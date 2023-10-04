@@ -27,10 +27,10 @@ spec:
           ports:
             - containerPort: 8080
           volumeMounts:
-            - mountPath: /analytic/logs/analytic.log
+            - mountPath: /analytic/logs/
               name: logs
       volumes:
         - name: logs
           hostPath:
-            path: /Users/laptev_8/Downloads/elasticsearch-8.10.2/logs/analytic.log
-            type: FileOrCreate
+            path: /logs/
+            type: Directory
