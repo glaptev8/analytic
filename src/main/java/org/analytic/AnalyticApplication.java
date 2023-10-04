@@ -1,4 +1,4 @@
-package org.example;
+package org.analytic;
 
 import java.util.Arrays;
 
