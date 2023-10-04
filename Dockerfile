@@ -5,7 +5,7 @@ COPY build/libs/analytic-*-SNAPSHOT.jar /analytic/build/
 
 WORKDIR /analytic/build
 
-RUN mkdir /Users/laptev_8/Downloads/elasticsearch-8.10.2/logs
+RUN mkdir /analytic/laptev_8/
 
 EXPOSE 8080
 
