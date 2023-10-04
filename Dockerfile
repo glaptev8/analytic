@@ -5,7 +5,7 @@ COPY build/libs/analytic-*-SNAPSHOT.jar /analytic/build/
 
 WORKDIR /analytic/build
 
-RUN mkdir /analytic/laptev_8/
+RUN touch /analytic/logs/analytic.log
 
 EXPOSE 8080
 
